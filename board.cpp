@@ -1,13 +1,8 @@
 #include "board.h"
-#include <iostream>
 #include <vector>
 using std::vector;
-using std::cout;
-using std::cin;
-using std::endl;
+
 enum ROWNAME {A,B,C,D,E,F,G,H,I,J};
-
-
 
 Board::Board()
 {
@@ -16,7 +11,6 @@ Board::Board()
 
 void Board::whereToPlace()
 {
-
 
 }
 
@@ -35,7 +29,6 @@ void Board::placeShip(placement starting, char shipType)
 
 void Board::placeDestroyer(placement starting)
 {
-
 	placeShip(starting, 'D');
 }
 
