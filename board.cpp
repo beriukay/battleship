@@ -5,10 +5,12 @@ using std::vector;
 using std::string;
 
 enum ROWNAME {A,B,C,D,E,F,G,H,I,J};
+const int boardLength = 10;
+const int boardWidth = 10;
 
 Board::Board()
 {
-	board.resize(10 * 10);
+	board.resize(boardLength * boardWidth);
 }
 
 void Board::whereToPlace()
