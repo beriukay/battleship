@@ -33,8 +33,8 @@ void Board::placeDestroyer(placement starting)
 }
 
 
-void main()
+int main()
 {
 
-
+	return 0;
 }

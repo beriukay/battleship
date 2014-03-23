@@ -3,6 +3,15 @@
 #include <vector>
 using std::vector;
 
+struct placement
+{
+	int rowBeginLocation;
+	int columnBeginLocation;
+
+	int rowEndLocation;
+	int columnEndLocation;
+};
+
 class Board
 {
 private: 
@@ -15,16 +24,7 @@ public:
 	void placeShip(placement starting, char shipType);
 	void placeDestroyer(placement starting);
 
-
 };
 
-struct placement
-{
-	int rowBeginLocation;
-	int columnBeginLocation;
-
-	int rowEndLocation;
-	int columnEndLocation;
-};
 
 #endif
