@@ -1,6 +1,8 @@
 #include "board.h"
 #include <vector>
 using std::vector;
+#include <string>
+using std::string;
 
 enum ROWNAME {A,B,C,D,E,F,G,H,I,J};
 
@@ -15,39 +17,18 @@ void Board::whereToPlace()
 }
 
 
-void Board::placeShip(placement starting, char shipType)
+void Board::placeShip(placement starting, int whichShip)
 {
+	string ships = "CBDSP";
 	for (int row = starting.rowBeginLocation ; row <=  starting.rowEndLocation; ++row)
 	{
 		for (int column = starting.columnBeginLocation ; column <= starting.columnEndLocation; ++column)
 		{
-			board[row*10+column] = shipType;
+			board[row*10+column] = ships[whichShip];
 		}
 	}
 
 }
-
-void Board::placeCarrier(placement starting)
-{
-	placeShip(starting, 'C');
-}
-void Board::placeBattleship(placement starting)
-{
-	placeShip(starting, 'B');
-}
-void Board::placeDestroyer(placement starting)
-{
-	placeShip(starting, 'D');
-}
-void Board::placeSubmarine(placement starting)
-{
-	placeShip(starting, 'S');
-}
-void Board::placePatrolBoat(placement starting)
-{
-	placeShip(starting, 'P');
-}
-
 
 int main()
 {

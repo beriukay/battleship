@@ -21,12 +21,7 @@ public:
 
 	Board();
 	void whereToPlace();
-	void placeShip(placement starting, char shipType);
-	void placeDestroyer(placement starting);
-	void placeCarrier(placement starting);
-	void placeBattleship(placement starting);
-	void placeSubmarine(placement starting);
-	void placePatrolBoat(placement starting);
+	void placeShip(placement starting, int whichShip);
 
 };
 
