@@ -27,9 +27,25 @@ void Board::placeShip(placement starting, char shipType)
 
 }
 
+void Board::placeCarrier(placement starting)
+{
+	placeShip(starting, 'C');
+}
+void Board::placeBattleship(placement starting)
+{
+	placeShip(starting, 'B');
+}
 void Board::placeDestroyer(placement starting)
 {
 	placeShip(starting, 'D');
+}
+void Board::placeSubmarine(placement starting)
+{
+	placeShip(starting, 'S');
+}
+void Board::placePatrolBoat(placement starting)
+{
+	placeShip(starting, 'P');
 }
 
 
