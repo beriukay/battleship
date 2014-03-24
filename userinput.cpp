@@ -9,12 +9,12 @@ using std::string;
 
 void getUserPlacement(ship &myShip)
 {
-	char rowName;
+	char rowName = 'z';
+	while (!(toupper(rowName) >= 'A' && toupper(rowName) <= 'J'))
+	{
 	cout << "Where would you like the bow of " << myShip.name << "?" << endl;
 	cin >> rowName;
-	if (rowName >= 'A' && rowName <= 'J')
-	{
-		myShip.bow.row = rowName - 'A';
+	myShip.bow.row = rowName - 'A';
 	}
 
 	cin >> myShip.bow.column;
