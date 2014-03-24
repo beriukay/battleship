@@ -8,14 +8,16 @@ using std::cout;
 using std::cin;
 using std::endl;
 #include "board.h"
+#include "ship.h"
 
 class UserInput
 {
 public:
 
 	void getUserPlacement(ship &);
-	void placeShips();
-	vector<ship>  createShips();
+	void makeShips();
+	void  placeShips(vector<ship> &);
+	vector<ship> generateShips();
 };
 
 #endif

@@ -8,8 +8,8 @@ using std::string;
 
 struct coordinates
 {
-	int rowLocation;
-	int columnLocation;
+	int row;
+	int column;
 };
 
 struct ship
@@ -33,8 +33,10 @@ public:
 	void populateBoard(vector<ship> ships);
 	void fillLeft(ship currentShip);
 	void fillRight(ship currentShip);
+	void fillLR(ship theShip, int dir);
 	void fillUp(ship currentShip);
 	void fillDown(ship currentShip);
+	void fillUD(ship theShip, int dir);
 	int getBoardWidth() { return _boardWidth; }
 	int getBoardHeight() { return _boardHeight; }
 	vector<char> getBoard() { return _board; }

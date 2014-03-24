@@ -44,3 +44,4 @@ Entry 8
 This was a weird issue. After handing off control of the helm to Nate, his git did 
 something weird creating a Detached Head. He said he'd write more about it, but it
 was weird. I'm not even sure what went wrong, so I have no idea how to avoid it.
+
