@@ -34,6 +34,7 @@ void Board::fillRight(ship theShip)
 {
 	fillLR(theShip, 1);
 }
+
 void Board::fillLR(ship theShip, int dir)
 {
 	for (int spot = 0; spot < theShip.size; ++spot)
