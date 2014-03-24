@@ -14,7 +14,7 @@ Board::Board(int len, int width)
 
 
 
-void Board::populateBoard(placement starting, ship currentShip)
+void Board::populateBoard(ship currentShip)
 {
 
 }

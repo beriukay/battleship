@@ -43,9 +43,14 @@ vector<ship> UserInput::createShips()
 	return ships;
 }
 
-void UserInput::placeShips()
+void UserInput::placeShips(Board & gameBoard)
 {
 	vector<ship> createdShips = createShips();
+
+	for (int iii = 0; iii < createdShips.size() ; iii++)
+	{
+	gameBoard.populateBoard(createdShips[iii]);
+	}
 }
 
 

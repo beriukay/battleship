@@ -29,7 +29,7 @@ private:
 public:
 
 	Board(int len=10, int width=10);
-	void populateBoard(placement starting, ship currentShip);
+	void populateBoard(ship currentShip);
 	int getBoardLength() { return boardLength; }
 	int getBoardWidth() { return boardWidth; }
 
