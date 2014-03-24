@@ -13,7 +13,7 @@ struct ship
 {
 	string name;
 	int size;
-	placement fore; //If you don't know nautical terms you shouldn't be reading this code.
+	placement bow; //If you don't know nautical terms you shouldn't be reading this code.
 	char direction;
 };
 
