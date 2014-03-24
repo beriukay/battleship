@@ -75,7 +75,7 @@ void drawBoard(Board b)
 
 int main()
 {
-	rules BattleShip;
+	Rules BattleShip;
 	Board playerOneBoard;
 	Board playerTwoBoard;
 	drawBoard(playerOneBoard);
