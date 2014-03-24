@@ -1,9 +1,14 @@
-#include "userinput.h"
+//#include "userinput.h"
 #include <cctype>
+#include <iostream>
+using std::cout;
+using std::cin;
+using std::endl;
 #include <string>
 using std::string;
+#include "board.h"
 
-void UserInput::getUserPlacement(ship &myShip)
+void getUserPlacement(ship &myShip)
 {
 	char rowName;
 
@@ -26,7 +31,7 @@ void UserInput::getUserPlacement(ship &myShip)
 	}
 }
 
-vector<ship> UserInput::generateShips()
+vector<ship> generateShips()
 {
 	vector<ship> ships;
 	string shipName[] = {"Battleship", "Carrier", "Destroyer", "Patrol ship", "Submarine"};
@@ -41,7 +46,7 @@ vector<ship> UserInput::generateShips()
 	return ships;
 }
 
-void UserInput::placeShips(vector<ship> & ships)
+void placeShips(vector<ship> & ships)
 {
 	for (auto whichShip : ships)
 	{
@@ -49,10 +54,11 @@ void UserInput::placeShips(vector<ship> & ships)
 	}
 }
 
-void UserInput::makeShips()
+vector<ship> setupShips()
 {
 	vector<ship> createdShips = generateShips();
 	placeShips(createdShips);
+	return createdShips;
 }
 
 
@@ -60,5 +66,8 @@ void UserInput::makeShips()
 int main()
 {
 	Board gameBoard;
+	vector<ship> userPlacedShips = setupShips();
+	gameBoard.populateBoard(userPlacedShips);
+	
 }
 
