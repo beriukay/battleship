@@ -74,12 +74,13 @@ void drawBoard(Board b)
 
 int main()
 {
-	Board gameBoard;
-	drawBoard(gameBoard);
-	vector<ship> userPlacedShips = setupShips();
-	cout << userPlacedShips[0].direction << endl;
-	gameBoard.populateBoard(userPlacedShips);
-	drawBoard(gameBoard);
+	Board playerOneBoard;
+	Board playerTwoBoard;
+	drawBoard(playerOneBoard);
+	vector<ship> playerOnePlacedShips = setupShips();
+	vector<ship> playerTwoPlacedShips = setupShips();
+	playerOneBoard.populateBoard(playerOnePlacedShips);
+	playerTwoBoard.populateBoard(playerTwoPlacedShips);
 	system ("wait");
 }
 
