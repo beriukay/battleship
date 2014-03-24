@@ -4,12 +4,11 @@ using std::vector;
 #include <string>
 using std::string;
 
-enum ROWNAME {A,B,C,D,E,F,G,H,I,J};
-const int boardLength = 10;
-const int boardWidth = 10;
 
-Board::Board()
+Board::Board(int len, int width)
 {
+	boardLength = len;
+	boardWidth = width;
 	board.resize(boardLength * boardWidth);
 }
 
@@ -32,8 +31,3 @@ void Board::placeShip(placement starting, int whichShip)
 
 }
 
-int main()
-{
-
-	return 0;
-}
