@@ -22,6 +22,8 @@ class UserInput
 public:
 
 	void getUserPlacement(ship &);
+	void placeShips();
+	vector<ship>  createShips();
 };
 
 
