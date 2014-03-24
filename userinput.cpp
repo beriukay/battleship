@@ -32,11 +32,11 @@ vector<ship> UserInput::createShips()
 	string shipName[5] = { "battleship", "carrier", "destroyer", "patrol ship", "submarine" };
 	int shipSize [] = { 4, 5, 3, 2, 3 };
 
-	for (int ii = 0; ii < 5; ++ii)
+	for (int whichShip = 0; whichShip < 5; ++whichShip)
 	{
 		ship newShip;
-		newShip.name = shipName[ii];
-		newShip.size = shipSize[ii];
+		newShip.name = shipName[whichShip];
+		newShip.size = shipSize[whichShip];
 		getUserPlacement(newShip);
 		ships.push_back(newShip);
 	}
