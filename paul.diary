@@ -23,3 +23,24 @@ placed on the board, so we started that.
 
 Entry 4
 Working again with Nate. He's had some system problems.
+
+Entry 5
+Working with Nate in the library. I started off driving, adding to the userinput class
+so that we actually have ships. They should probably be moved later, but I'm not exactly
+sure where they should fit just yet. Nate took over and spent some time refactoring.
+
+Entry 6
+Back at the helm, now with some cool new vim plugins, like with tab completion and, for 
+lack of better words, dynamic compiling. This saves a bunch of time in trying to compile
+after every small change to see if it still runs. Nate took over after some more time.
+
+Entry 7 
+Adding some more functionality, using c++11, everything seemed fine. Then stupid Visual
+Studio, which is what Nate is using, apparently can't handle vectors with initializer 
+lists. That took a chunk of time to troubleshoot, what with updating Visual Studio, and
+googling fixes (there don't seem to be any). 
+
+Entry 8
+This was a weird issue. After handing off control of the helm to Nate, his git did 
+something weird creating a Detached Head. He said he'd write more about it, but it
+was weird. I'm not even sure what went wrong, so I have no idea how to avoid it.
