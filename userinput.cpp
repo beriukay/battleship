@@ -26,26 +26,34 @@ void UserInput::getUserPlacement(ship &myShip)
 	}
 }
 
-vector<ship> UserInput::createShips()
+vector<ship> UserInput::generateShips()
 {
-	vector<ship> ships;
-	string shipName[5] = { "battleship", "carrier", "destroyer", "patrol ship", "submarine" };
-	int shipSize [] = { 4, 5, 3, 2, 3 };
 
+	vector<ship> ships;
+	string shipName[] = {"battleship", "carrier", "destroyer", "patrol ship", "submarine"};
+	int shipSize [] = { 4, 5, 3, 2, 3 };
 	for (int whichShip = 0; whichShip < 5; ++whichShip)
 	{
 		ship newShip;
 		newShip.name = shipName[whichShip];
 		newShip.size = shipSize[whichShip];
-		getUserPlacement(newShip);
 		ships.push_back(newShip);
 	}
 	return ships;
 }
 
-void UserInput::placeShips()
+void UserInput::placeShips(vector<ship> & ships)
 {
-	vector<ship> createdShips = createShips();
+	for (int whichShip = 0; whichShip < 5; ++whichShip)
+	{
+		getUserPlacement(ships[whichShip]);
+	}
+}
+
+void UserInput::makeShips()
+{
+	vector<ship> createdShips = generateShips();
+	placeShips(createdShips);
 }
 
 
