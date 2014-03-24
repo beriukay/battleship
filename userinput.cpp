@@ -30,11 +30,11 @@ void UserInput::getUserPlacement(Board game, ship myShip)
 	}
 	else if (direction == 'U')
 	{
-		myShip.location.rowEndLocation = column + myShip.size;
+		myShip.location.columnEndLocation = column + myShip.size;
 	}
 	else if (direction == 'D')
 	{
-		myShip.location.rowEndLocation = column - myShip.size;
+		myShip.location.columnEndLocation = column - myShip.size;
 	}
 }
 
