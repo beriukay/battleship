@@ -14,16 +14,8 @@ Board::Board(int len, int width)
 
 
 
-void Board::placeShip(placement starting, int whichShip)
+void Board::populateBoard(placement starting, ship currentShip)
 {
-	string ships = "BCDPS";
-	for (int row = starting.rowLocation ; row <=  starting.rowLocation; ++row)
-	{
-		for (int column = starting.columnLocation ; column <= starting.columnLocation; ++column)
-		{
-			board[row*boardLength + column] = ships[whichShip];
-		}
-	}
 
 }
 
