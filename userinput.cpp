@@ -16,9 +16,14 @@ void UserInput::getUserPlacement(ship &myShip)
 
 	cin >> myShip.bow.columnLocation;
 
+	char direction;
 	cout << "Which direction? (eg l, r, u, d)" << endl;
-	cin >> myShip.direction;
-	myShip.direction = toupper(myShip.direction);
+	string possibleDirections = "lrud";
+	cin >> direction;
+	if (possibleDirections.find(direction))
+	{
+		myShip.direction = toupper(myShip.direction);
+	}
 }
 
 vector<ship> UserInput::createShips()
