@@ -8,10 +8,12 @@ using std::cout;
 using std::cin;
 using std::endl;
 #include "board.h"
-#include "ship.h"
+
 
 class UserInput
 {
+private:
+	bool gameOver;
 public:
 
 	void getUserPlacement(ship &);
