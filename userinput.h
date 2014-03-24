@@ -24,7 +24,7 @@ private:
 
 public:
 
-	void getUserPlacement(Board, ship);
+	Board getUserPlacement(ship);
 };
 
 

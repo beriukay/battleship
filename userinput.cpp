@@ -1,8 +1,9 @@
 #include "userinput.h"
 #include <cctype>
 
-void UserInput::getUserPlacement(Board game, ship myShip)
+Board UserInput::getUserPlacement(ship myShip)
 {
+	Board gameBoard;
 	int column;
 	char rowName;
 	int row;
@@ -17,7 +18,7 @@ void UserInput::getUserPlacement(Board game, ship myShip)
 
 
 	cin >> column;
-	if (column >= 0 && column <= game.getBoardWidth())
+	if (column >= 0 && column <= gameBoard.getBoardWidth())
 	{
 		myShip.location.columnBeginLocation = column;
 	}
@@ -44,6 +45,8 @@ void UserInput::getUserPlacement(Board game, ship myShip)
 	{
 		myShip.location.columnEndLocation = column - myShip.size;
 	}
+
+	return gameBoard;
 }
 
 int main()
