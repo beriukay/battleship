@@ -9,10 +9,10 @@ void UserInput::getUserPlacement(ship &myShip)
 	cin >> rowName;
 	if (rowName >= 'A' && rowName <= 'J')
 	{
-		myShip.location.foreRowLocation = rowName - 'A';
+		myShip.fore.rowLocation = rowName - 'A';
 	}
 
-	cin >> myShip.location.foreColumnLocation;
+	cin >> myShip.fore.columnLocation;
 
 	cout << "Which direction? (eg l, r, u, d)" << endl;
 	cin >> myShip.direction;
@@ -21,27 +21,7 @@ void UserInput::getUserPlacement(ship &myShip)
 
 }
 
-void setShipAftLocation(ship currentShip)
-{
-	
-	if (currentShip.direction == 'L')
-	{
-		currentShip.location.aftRowLocation = currentShip.location.foreRowLocation + currentShip.size;
-	}
-	else if (currentShip.direction == 'R')
-	{
-		currentShip.location.aftRowLocation = currentShip.location.foreRowLocation - currentShip.size;
-	}
-	else if (currentShip.direction == 'U')
-	{
-		currentShip.location.aftColumnLocation = currentShip.location.foreColumnLocation + currentShip.size;
-	}
-	else if (currentShip.direction == 'D')
-	{
-		currentShip.location.aftColumnLocation = currentShip.location.foreColumnLocation - currentShip.size;
-	}
 
-}
 
 int main()
 {

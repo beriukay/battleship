@@ -13,20 +13,15 @@ struct ship
 {
 	string name;
 	int size;
-	placement location;
+	placement fore; //If you don't know nautical terms you shouldn't be reading this code.
 	char direction;
 };
 
 class UserInput
 {
-private:
-	
-	placement starting;
-
 public:
 
 	void getUserPlacement(ship &);
-	void setShipAftLocation(ship currentShip);
 };
 
 
