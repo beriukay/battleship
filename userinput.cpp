@@ -10,7 +10,6 @@ using std::string;
 void getUserPlacement(ship &myShip)
 {
 	char rowName;
-
 	cout << "Where would you like the bow of " << myShip.name << "?" << endl;
 	cin >> rowName;
 	if (rowName >= 'A' && rowName <= 'J')
@@ -22,11 +21,12 @@ void getUserPlacement(ship &myShip)
 
 	char direction;
 	cout << "Which direction? (eg l, r, u, d)" << endl;
-	string possibleDirections = "lrud";
+	string possibleDirections = "LRUD";
 	cin >> direction;
+	direction = toupper(direction);
 	if (possibleDirections.find(direction))
 	{
-		myShip.direction = toupper(myShip.direction);
+		myShip.direction = direction;
 	}
 }
 
@@ -79,6 +79,7 @@ int main()
 	Board gameBoard;
 	drawBoard(gameBoard);
 	vector<ship> userPlacedShips = setupShips();
+	cout << userPlacedShips[0].direction << endl;
 	gameBoard.populateBoard(userPlacedShips);
 	drawBoard(gameBoard);
 }

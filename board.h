@@ -30,12 +30,12 @@ private:
 public:
 
 	Board(int len=10, int width=10);
-	void populateBoard(vector<ship> ships);
-	void fillLeft(ship currentShip);
-	void fillRight(ship currentShip);
+	void populateBoard(vector<ship> & ships);
+	void fillLeft(ship currentShip) { fillLR(currentShip, -1); }
+	void fillRight(ship currentShip) { fillLR(currentShip, 1); }
 	void fillLR(ship theShip, int dir);
-	void fillUp(ship currentShip);
-	void fillDown(ship currentShip);
+	void fillUp(ship currentShip) { fillUD(currentShip, -1); }
+	void fillDown(ship currentShip) { fillUD(currentShip, 1); }
 	void fillUD(ship theShip, int dir);
 	int getBoardWidth() { return _boardWidth; }
 	int getBoardHeight() { return _boardHeight; }
