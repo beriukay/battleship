@@ -15,8 +15,8 @@ class UserInput
 public:
 
 	void getUserPlacement(ship &);
-	void makeShips();
 	void  placeShips(vector<ship> &);
+	vector<ship> setupShips();
 	vector<ship> generateShips();
 };
 
