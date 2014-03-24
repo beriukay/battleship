@@ -14,6 +14,7 @@ struct ship
 	string name;
 	int size;
 	placement location;
+	char direction;
 };
 
 class UserInput
@@ -24,7 +25,8 @@ private:
 
 public:
 
-	Board getUserPlacement(ship);
+	void getUserPlacement(ship &);
+	void setShipAftLocation(ship currentShip);
 };
 
 

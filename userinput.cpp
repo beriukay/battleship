@@ -1,52 +1,46 @@
 #include "userinput.h"
 #include <cctype>
 
-Board UserInput::getUserPlacement(ship myShip)
+void UserInput::getUserPlacement(ship &myShip)
 {
-	Board gameBoard;
-	int column;
 	char rowName;
-	int row;
+
 	cout << "Where would you like the begining of " << myShip.name << "?" << endl;
 	cin >> rowName;
-	rowName = toupper(rowName);
 	if (rowName >= 'A' && rowName <= 'J')
 	{
-		row = rowName - 'A';
-		myShip.location.rowBeginLocation = row;
+		myShip.location.foreRowLocation = rowName - 'A';
 	}
 
-
-	cin >> column;
-	if (column >= 0 && column <= gameBoard.getBoardWidth())
-	{
-		myShip.location.columnBeginLocation = column;
-	}
-
-	char direction;
+	cin >> myShip.location.foreColumnLocation;
 
 	cout << "Which direction? (eg l, r, u, d)" << endl;
-	cin >> direction;
-	direction = toupper(direction);
+	cin >> myShip.direction;
+	myShip.direction = toupper(myShip.direction);
 	
-	if (direction == 'L')
+
+}
+
+void setShipAftLocation(ship currentShip)
+{
+	
+	if (currentShip.direction == 'L')
 	{
-		myShip.location.rowEndLocation = row + myShip.size;
+		currentShip.location.aftRowLocation = currentShip.location.foreRowLocation + currentShip.size;
 	}
-	else if (direction == 'R')
+	else if (currentShip.direction == 'R')
 	{
-		myShip.location.rowEndLocation = row - myShip.size;
+		currentShip.location.aftRowLocation = currentShip.location.foreRowLocation - currentShip.size;
 	}
-	else if (direction == 'U')
+	else if (currentShip.direction == 'U')
 	{
-		myShip.location.columnEndLocation = column + myShip.size;
+		currentShip.location.aftColumnLocation = currentShip.location.foreColumnLocation + currentShip.size;
 	}
-	else if (direction == 'D')
+	else if (currentShip.direction == 'D')
 	{
-		myShip.location.columnEndLocation = column - myShip.size;
+		currentShip.location.aftColumnLocation = currentShip.location.foreColumnLocation - currentShip.size;
 	}
 
-	return gameBoard;
 }
 
 int main()

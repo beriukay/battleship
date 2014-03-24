@@ -6,11 +6,11 @@ using std::vector;
 
 struct placement
 {
-	int rowBeginLocation;
-	int columnBeginLocation;
+	int foreRowLocation;
+	int foreColumnLocation;
 
-	int rowEndLocation;
-	int columnEndLocation;
+	int aftRowLocation;
+	int aftColumnLocation;
 };
 
 class Board

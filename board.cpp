@@ -21,9 +21,9 @@ void Board::whereToPlace()
 void Board::placeShip(placement starting, int whichShip)
 {
 	string ships = "CBDSP";
-	for (int row = starting.rowBeginLocation ; row <=  starting.rowEndLocation; ++row)
+	for (int row = starting.foreRowLocation ; row <=  starting.aftRowLocation; ++row)
 	{
-		for (int column = starting.columnBeginLocation ; column <= starting.columnEndLocation; ++column)
+		for (int column = starting.foreColumnLocation ; column <= starting.aftColumnLocation; ++column)
 		{
 			board[row*10+column] = ships[whichShip];
 		}
