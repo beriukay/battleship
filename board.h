@@ -20,7 +20,6 @@ private:
 public:
 
 	Board(int len=10, int width=10);
-	void whereToPlace();
 	void placeShip(placement starting, int whichShip);
 	int getBoardLength() { return boardLength; }
 	int getBoardWidth() { return boardWidth; }
