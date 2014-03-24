@@ -81,6 +81,7 @@ int main()
 	vector<ship> playerTwoPlacedShips = setupShips();
 	playerOneBoard.populateBoard(playerOnePlacedShips);
 	playerTwoBoard.populateBoard(playerTwoPlacedShips);
+	
 	system ("wait");
 }
 
