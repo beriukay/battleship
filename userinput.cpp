@@ -6,6 +6,7 @@ using std::endl;
 #include <string>
 using std::string;
 #include "board.h"
+#include "rules.h"
 
 void getUserPlacement(ship &myShip)
 {
@@ -74,6 +75,7 @@ void drawBoard(Board b)
 
 int main()
 {
+	rules BattleShip;
 	Board playerOneBoard;
 	Board playerTwoBoard;
 	drawBoard(playerOneBoard);
