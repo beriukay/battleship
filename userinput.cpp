@@ -12,22 +12,20 @@ void getUserPlacement(ship &myShip)
 	char rowName = 'z';
 	while (!(toupper(rowName) >= 'A' && toupper(rowName) <= 'J'))
 	{
-	cout << "Where would you like the bow of " << myShip.name << "?" << endl;
-	cin >> rowName;
-	myShip.bow.row = (int)toupper(rowName)- 'A';
+		cout << "Which row would you like the bow of " << myShip.name << "?" << endl;
+		cin >> rowName;
+		myShip.bow.row = (int)toupper(rowName)- 'A';
 	}
 
-	cin >> myShip.bow.column;
-
-	char direction;
-	cout << "Which direction? (eg l, r, u, d)" << endl;
-	string possibleDirections = "LRUD";
-	cin >> direction;
-	direction = toupper(direction);
-	if (possibleDirections.find(direction))
+	while (!(myShip.bow.column > 0 && myShip.bow.column < 10))
 	{
-		myShip.direction = direction;
+		cout << "Which column would you like the bow of " << myShip.name << "?" << endl;
+		cin >> myShip.bow.column;
 	}
+		char direction;
+		cout << "Which direction? (eg l, r, u, d)" << endl;
+		cin >> direction;
+		myShip.direction = toupper(direction);
 }
 
 vector<ship> generateShips()
