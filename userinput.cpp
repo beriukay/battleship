@@ -1,4 +1,3 @@
-//#include "userinput.h"
 #include <cctype>
 #include <iostream>
 using std::cout;
@@ -12,7 +11,7 @@ void getUserPlacement(ship &myShip)
 {
 	char rowName;
 
-	cout << "Where would you like the begining of " << myShip.name << "?" << endl;
+	cout << "Where would you like the bow of " << myShip.name << "?" << endl;
 	cin >> rowName;
 	if (rowName >= 'A' && rowName <= 'J')
 	{
@@ -61,13 +60,26 @@ vector<ship> setupShips()
 	return createdShips;
 }
 
+void drawBoard(Board b)
+{
+	vector<char> bCopy = b.getBoard();
+	for(int i=0; i < b.getBoardHeight(); ++i)
+	{
+		for (int j=0; j < b.getBoardWidth(); ++j) 
+		{
+			cout << bCopy[b.getBoardWidth() * i + j];
+		}
+		cout << endl;
+	}
+}
 
 
 int main()
 {
 	Board gameBoard;
+	drawBoard(gameBoard);
 	vector<ship> userPlacedShips = setupShips();
 	gameBoard.populateBoard(userPlacedShips);
-	
+	drawBoard(gameBoard);
 }
 
