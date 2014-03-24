@@ -25,32 +25,12 @@ void Board::populateBoard(vector<ship> ships)
 	}
 }
 
-void Board::fillLeft(ship theShip)
-{
-	fillLR(theShip, -1);
-}
-
-void Board::fillRight(ship theShip)
-{
-	fillLR(theShip, 1);
-}
-
 void Board::fillLR(ship theShip, int dir)
 {
 	for (int spot = 0; spot < theShip.size; ++spot)
 	{
 		_board[theShip.bow.row *_boardWidth + theShip.bow.column + dir * spot];
 	}
-}
-
-void Board::fillUp(ship theShip)
-{
-	fillUD(theShip, -1);
-}
-
-void Board::fillDown(ship theShip)
-{
-	fillUD(theShip, 1);
 }
 
 void Board::fillUD(ship theShip, int dir)
