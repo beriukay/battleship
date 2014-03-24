@@ -1,7 +1,9 @@
 #ifndef BOARD_H
 #define BOARD_H
+
 #include <vector>
 using std::vector;
+#include <string>
 using std::string;
 
 struct placement
@@ -9,7 +11,6 @@ struct placement
 	int rowLocation;
 	int columnLocation;
 };
-
 
 struct ship
 {
@@ -34,6 +35,5 @@ public:
 	int getBoardWidth() { return boardWidth; }
 
 };
-
 
 #endif
