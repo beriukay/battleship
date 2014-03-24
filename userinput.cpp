@@ -1,5 +1,7 @@
 #include "userinput.h"
 #include <cctype>
+#include <string>
+using std::string;
 
 void UserInput::getUserPlacement(ship &myShip)
 {
@@ -19,6 +21,22 @@ void UserInput::getUserPlacement(ship &myShip)
 	myShip.direction = toupper(myShip.direction);
 	
 
+}
+
+void UserInput::placeShips()
+{
+	vector<ship> ships;
+	vector<string> shipName = { "battleship", "carrier", "destroyer", "patrol ship", "submarine" };
+	int shipSize [] = { 4, 5, 3, 2, 3 };
+
+	for (int ii = 0; ii < int(shipName.size()); ++ii)
+	{
+		ship newShip;
+		newShip.name = shipName[ii];
+		newShip.size = shipSize[ii];
+		getUserPlacement(newShip);
+		ships.push_back(newShip);
+	}
 }
 
 
