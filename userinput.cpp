@@ -19,11 +19,9 @@ void UserInput::getUserPlacement(ship &myShip)
 	cout << "Which direction? (eg l, r, u, d)" << endl;
 	cin >> myShip.direction;
 	myShip.direction = toupper(myShip.direction);
-	
-
 }
 
-void UserInput::placeShips()
+vector<ship> UserInput::createShips()
 {
 	vector<ship> ships;
 	vector<string> shipName = { "battleship", "carrier", "destroyer", "patrol ship", "submarine" };
@@ -37,6 +35,12 @@ void UserInput::placeShips()
 		getUserPlacement(newShip);
 		ships.push_back(newShip);
 	}
+	return ships;
+}
+
+void UserInput::placeShips()
+{
+	vector<ship> createdShips = createShips();
 }
 
 
