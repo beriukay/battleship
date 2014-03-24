@@ -1,9 +1,39 @@
-Feb 28:  We called my friend tanner today who agreed to be the product owner and guiding vision for our project. 
+Entry 1:  We called my friend Tanner today who agreed to be the product owner and guiding vision for our project. 
         He came up with some good ideas like being able to place ships, special abilities for ships, and a turn based
         system. He also came up with some bad and rediculous ideas like making it a drinking game and basing the gameplay
-        off of waterworld and the movie battleship.
+        off of waterworld and the movie battleship. Me and Paul decided to only pair program. 
         
-March 2: Had to cancel the meeting with paul today because my battleaxe of a laptop died. LIVE FREE MY FRIEND. 
-        YOU WILL BE MISSED. Also begrudgingly ordered new laptop.
+Entry 2: Had to cancel the meeting with paul today because my battleaxe of a laptop died. LIVE FREE MY FRIEND. 
+         YOU WILL BE MISSED. Also begrudgingly ordered new laptop.
         
-March 3: Met with paul to discuss our presentation and got our skeleton outline made.
+Entry 3: Spring Break has turned into a week of wishing I was dead. I got food poisioning on The opening Saturday and now
+         am finally feeling better on Thursday.
+
+Entry 4: Met with paul to discuss our presentation and got our skeleton outline made. I have my newcomputer set up
+         and we can programing. We decided the board class was the first thing that needed to be made. We began working 
+         on our userInput class for the Users to determine where their boards go.
+         
+Entry 5: I left my github open when I went off the network. When I came back on I got a detachedHead problem. I will
+         make sure to see if anyone else had the problem and tell people how I solved it when I encountered it. I met with 
+         Paul after this and watched him code. When he was finished I refactored our code and explained my reasoning.
+         
+Entry 6: Paul installed some plugins which basically brings his vim that much closer to an IDE. Why he doesn't just switch
+         baffles me. While paul was working on this I worked on ship placement on the board. 
+         
+Entry 7: Appearently visuals studios doesn't support initializer lists for vectors which is suprising to me. This took some
+         time to fix. I thought upgrading to update 4 of visual studios might solve the problem but It just wasted about a
+         half an hour. Unfortunately there was no work around that we could find so we had to take the list out.
+         
+Entry 8: The detached head problem happened again. This time Paul was here to witness it. I explained the issue to him. 
+         I don't think he fully understood but I feel behind in this project with my updates to Tanner and so I figured we 
+         focus on the project more than our problems. 
+         
+Entry 9: Today is the day of the presentation and our "due date" with our client. I did schedule to meet Tanner today just
+         as a sense of completion for myself. I didn't trouble Paul with it as the pair programming commitment we made took
+         a lot of our personal lives away. I am paniced to say the least. I know me and Paul worked a lot on this and 
+         everything we have compiles and is easily readable but I feel like someone who only wants an end product will not
+         care about these things. We have the board and userInputs compleated but no turn or rules system. Since I couldn't
+         sleep this morning I added a rule class to take care of what we were missing. Unfortunately this class will not be
+         done by the presentation time in class. I am hoping to have it done by the time I meet Tanner tonight at 8pm, as 
+         long as I throw clean code out the window till I can refactor after the meeting. It would be a very nice to be able
+         to sit down and play a game with him.
