@@ -44,9 +44,9 @@ vector<ship> UserInput::generateShips()
 
 void UserInput::placeShips(vector<ship> & ships)
 {
-	for (int whichShip = 0; whichShip < 5; ++whichShip)
+	for (auto whichShip : ships)
 	{
-		getUserPlacement(ships[whichShip]);
+		getUserPlacement(whichShip);
 	}
 }
 
