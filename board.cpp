@@ -10,12 +10,50 @@ Board::Board(int height, int width) : _boardWidth(width), _boardHeight(height)
 }
 
 
-void Board::populateBoard(ship currentShip)
+void Board::populateBoard(vector<ship> ships)
 {
-	for (int ii = 0; ii < currentShip.size; ++ii)
+	for (size_t ii = 0; ii < ships.size(); ++ii)
 	{
-				
+		if (ships[ii].direction == 'l')
+			fillLeft(ships[ii]);
+		else if (ships[ii].direction == 'r')
+			fillRight(ships[ii]);
+		else if (ships[ii].direction == 'u')
+			fillUp(ships[ii]);
+		else if (ships[ii].direction == 'd')
+			fillDown(ships[ii]);
 	}
 }
 
-	
+void Board::fillLeft(ship theShip)
+{
+	for (int spot = 0; spot < theShip.size; ++spot)
+	{
+		_board[theShip.bow.rowLocation *_boardWidth + theShip.bow.columnLocation - spot];
+	}
+}
+
+void Board::fillRight(ship theShip)
+{
+	for (int spot = 0; spot < theShip.size; ++spot)
+	{
+		_board[theShip.bow.rowLocation *_boardWidth + theShip.bow.columnLocation + spot];
+	}
+}
+
+void Board::fillUp(ship theShip)
+{
+	for (int spot = 0; spot < theShip.size; ++spot)
+	{
+		_board[(theShip.bow.rowLocation - spot) *_boardWidth + theShip.bow.columnLocation];
+	}
+}
+
+void Board::fillDown(ship theShip)
+{
+	for (int spot = 0; spot < theShip.size; ++spot)
+	{
+		_board[(theShip.bow.rowLocation + spot) *_boardWidth + theShip.bow.columnLocation];
+	}
+
+}
