@@ -67,7 +67,7 @@ void drawBoard(Board b)
 	{
 		for (int j=0; j < b.getBoardWidth(); ++j) 
 		{
-			cout << bCopy[b.getBoardWidth() * i + j];
+			cout << bCopy[b.getBoardWidth() * i + j] << " ";
 		}
 		cout << endl;
 	}
