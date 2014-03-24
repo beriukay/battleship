@@ -14,7 +14,7 @@ void getUserPlacement(ship &myShip)
 	{
 	cout << "Where would you like the bow of " << myShip.name << "?" << endl;
 	cin >> rowName;
-	myShip.bow.row = rowName - 'A';
+	myShip.bow.row = (int)toupper(rowName)- 'A';
 	}
 
 	cin >> myShip.bow.column;
@@ -47,7 +47,7 @@ vector<ship> generateShips()
 
 void placeShips(vector<ship> & ships)
 {
-	for (auto whichShip : ships)
+	for (auto & whichShip : ships)
 	{
 		getUserPlacement(whichShip);
 	}
@@ -82,5 +82,6 @@ int main()
 	cout << userPlacedShips[0].direction << endl;
 	gameBoard.populateBoard(userPlacedShips);
 	drawBoard(gameBoard);
+	system ("wait");
 }
 
