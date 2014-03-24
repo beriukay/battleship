@@ -29,10 +29,10 @@ void UserInput::getUserPlacement(ship &myShip)
 vector<ship> UserInput::createShips()
 {
 	vector<ship> ships;
-	vector<string> shipName = { "battleship", "carrier", "destroyer", "patrol ship", "submarine" };
+	string shipName[5] = { "battleship", "carrier", "destroyer", "patrol ship", "submarine" };
 	int shipSize [] = { 4, 5, 3, 2, 3 };
 
-	for (int ii = 0; ii < int(shipName.size()); ++ii)
+	for (int ii = 0; ii < 5; ++ii)
 	{
 		ship newShip;
 		newShip.name = shipName[ii];
