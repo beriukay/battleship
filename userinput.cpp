@@ -19,9 +19,22 @@ void UserInput::getUserPlacement(Board game, ship myShip)
 	char direction;
 	cout << "Which direction? (eg l, r, u, d)" << endl;
 	cin >> direction;
+	direction = toupper(direction);
 	if (toupper(direction) == 'L')
 	{
 		myShip.location.rowEndLocation = row + myShip.size;
+	}
+	else if (toupper(direction) == 'R')
+	{
+		myShip.location.rowEndLocation = row - myShip.size;
+	}
+	else if (toupper(direction) == 'U')
+	{
+		myShip.location.rowEndLocation = column + myShip.size;
+	}
+	else if (toupper(direction) == 'D')
+	{
+		myShip.location.rowEndLocation = column - myShip.size;
 	}
 }
 
