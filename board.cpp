@@ -14,8 +14,6 @@ void Board::populateBoard(vector<ship> &ships)
 {
 	for (size_t ii = 0; ii < ships.size(); ++ii)
 	{
-		std::cout << ships[ii].direction << std::endl;
-		std::cout << ships[ii].name << std::endl;
 		if (ships[ii].direction == 'L')
 			fillLeft(ships[ii]);
 		else if (ships[ii].direction == 'R')
@@ -24,8 +22,6 @@ void Board::populateBoard(vector<ship> &ships)
 			fillUp(ships[ii]);
 		else if (ships[ii].direction == 'D')
 			fillDown(ships[ii]);
-		else
-			std::cout << "something is weird" << std::endl;
 	}
 }
 
@@ -44,7 +40,5 @@ void Board::fillUD(ship theShip, int dir)
 	{
 		_board[(theShip.bow.row + (dir * spot)) *_boardWidth + theShip.bow.column] =
 			theShip.name[0];
-		std::cout << theShip.name[0] << std::endl;
-
 	}
 }

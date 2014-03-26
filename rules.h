@@ -9,13 +9,13 @@ using std::endl;
 class Rules
 {
 
-private:
-	bool playersTurn;
+    private:
+        bool playersTurn;
 
-public:
-	bool thisTurn( bool whosTurn);
-	void attackPrompt();
-	void collisionDetection();
+    public:
+        bool thisTurn( bool whosTurn);
+        void attackPrompt();
+        void collisionDetection();
 };
 
 
