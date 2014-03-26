@@ -4,31 +4,20 @@
 #include "rules.h"
 #include "ship.h"
 #include "userinput.h"
+#include <iostream>
+using std::cout;
+using std::endl;
 
-void drawBoard(Board b)
-{
-	vector<char> bCopy = b.getBoard();
-	for(int i=0; i < b.getBoardHeight(); ++i)
-	{
-		for (int j=0; j < b.getBoardWidth(); ++j) 
-		{
-			cout << bCopy[b.getBoardWidth() * i + j] << " ";
-		}
-		cout << endl;
-	}
-}
 
 TEST_CASE( "Board is created", "[board]" ) 
 {
-	Rules BattleShip;
+	//Rules BattleShip;
 	Board playerOneBoard;
-	Board playerTwoBoard;
-	Ship makeShips;
-	drawBoard(playerOneBoard);
-	vector<ship> playerOnePlacedShips = makeShips.setupShips();
-	vector<ship> playerTwoPlacedShips = makeShips.setupShips();
-	playerOneBoard.populateBoard(playerOnePlacedShips);
-	drawBoard(playerOneBoard);
-	//playerTwoBoard.populateBoard(playerTwoPlacedShips);
+    //playerOneBoard.drawBoard();
+    vector<char> blankScreen(100, '.');
+    REQUIRE( playerOneBoard.getBoard() == blankScreen);
+	//drawBoard(playerOneBoard);
+	//vector<Ship> playerOnePlacedShips = makeShips.setupShips();
+	//playerOneBoard.populateBoard(playerOnePlacedShips);
     //REQUIRE( Factorial(1) == 1 );
 }
