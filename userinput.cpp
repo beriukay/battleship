@@ -8,7 +8,7 @@ using std::string;
 #include "board.h"
 #include "rules.h"
 
-void getUserPlacement(Ship &myShip)
+void UserInput::getUserPlacement(Ship &myShip)
 {
 	char rowName = 'z';
 	while (!(toupper(rowName) >= 'A' && toupper(rowName) <= 'J'))
@@ -29,7 +29,13 @@ void getUserPlacement(Ship &myShip)
 		myShip.direction = toupper(direction);
 }
 
-vector<Ship> generateShips()
+void UserInput::getUserAttack()
+{
+
+
+}
+
+vector<Ship> UserInput::generateShips()
 {
 	vector<Ship> fleet;
 	string shipName[] = {"Battleship", "Carrier", "Destroyer", "Patrol ship", "Submarine"};
@@ -44,7 +50,7 @@ vector<Ship> generateShips()
 	return fleet;
 }
 
-void placeShips(vector<Ship> & ships)
+void UserInput::placeShips(vector<Ship> & ships)
 {
 	for (auto & whichShip : ships)
 	{
@@ -52,25 +58,13 @@ void placeShips(vector<Ship> & ships)
 	}
 }
 
-vector<Ship> setupShips()
+vector<Ship> UserInput::setupShips()
 {
 	vector<Ship> createdShips = generateShips();
 	placeShips(createdShips);
 	return createdShips;
 }
 
-void drawBoard(Board b)
-{
-	vector<char> bCopy = b.getBoard();
-	for(int i=0; i < b.getBoardHeight(); ++i)
-	{
-		for (int j=0; j < b.getBoardWidth(); ++j) 
-		{
-			cout << bCopy[b.getBoardWidth() * i + j] << " ";
-		}
-		cout << endl;
-	}
-}
 
 
 

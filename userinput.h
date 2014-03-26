@@ -17,6 +17,7 @@ private:
 public:
 
 	void getUserPlacement(Ship &);
+	void getUserAttack();
 	void  placeShips(vector<Ship> &);
 	vector<Ship> setupShips();
 	vector<Ship> generateShips();
