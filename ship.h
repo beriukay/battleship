@@ -41,27 +41,12 @@ class BattleFleet
 private:
 	vector<Ship> _battleFleet;
 public:
-	BattleFleet(vector<int> shipChoices) : _battleFleet()
-	{
-		enum ShipValues {BATTLESHIP, CARRIER, DESTROYER, PTBOAT, SUBMARINE};
-		for (int shipChoice : shipChoices)
-		{
-			switch(ShipValues(shipChoice))
-			{
-				case BATTLESHIP:
-					_battleFleet.push_back(Battleship());
-					break;
-				default:
-					break;
-			}
-		}
+	BattleFleet(vector<int>);
 
-	}
-
-	void  placeShips(vector<Ship> &);
-	vector<Ship> setupShips();
-	void generateShips();
-	vector<Ship> getPlacedShips() { return _battleFleet; }
+	void  setFleet(vector<Ship> &);
+	vector<Ship> getFleet() { return _battleFleet; }
 };
 
+//string shipName[] = {"Battleship", "Carrier", "Destroyer", "Patrol ship", "Submarine"};
+//int shipSize [] = { 4, 5, 3, 2, 3 };
 #endif
