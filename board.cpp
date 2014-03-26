@@ -9,33 +9,33 @@ void Board::populateBoard(vector<Ship> &ships)
 {
 	for (size_t ii = 0; ii < ships.size(); ++ii)
 	{
-		if (ships[ii].direction == 'L')
+		if (ships[ii].getDirection() == 'L')
 			fillLeft(ships[ii]);
-		else if (ships[ii].direction == 'R')
+		else if (ships[ii].getDirection() == 'R')
 			fillRight(ships[ii]);
-		else if (ships[ii].direction == 'U')
+		else if (ships[ii].getDirection() == 'U')
 			fillUp(ships[ii]);
-		else if (ships[ii].direction == 'D')
+		else if (ships[ii].getDirection() == 'D')
 			fillDown(ships[ii]);
 	}
 }
 
 void Board::fillLR(Ship theShip, int direction)
 {
-	for (int spot = 0; spot < theShip.size; ++spot)
+	for (int spot = 0; spot < theShip.size(); ++spot)
 	{
-        int calculateRow = theShip.bow.row * _boardWidth;
-        int calculateColumn = theShip.bow.column + (direction * spot);
-		_board[calculateRow + calculateColumn] = theShip.name[0];
+        int calculateRow = theShip.getRow() * _boardWidth;
+        int calculateColumn = theShip.getColumn() + (direction * spot);
+		_board[calculateRow + calculateColumn] = theShip.getName()[0];
 	}
 }
 
 void Board::fillUD(Ship theShip, int dir)
 {
-	for (int spot = 0; spot < theShip.size; ++spot)
+	for (int spot = 0; spot < theShip.size(); ++spot)
 	{
-        int calculateRow = (theShip.bow.row + (dir * spot)) * _boardWidth;
-		_board[calculateRow + theShip.bow.column] = theShip.name[0];
+        int calculateRow = (theShip.getRow() + (dir * spot)) * _boardWidth;
+		_board[calculateRow + theShip.getColumn()] = theShip.getName()[0];
 	}
 }
 

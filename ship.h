@@ -12,12 +12,21 @@ struct coordinates
 	int column;
 };
 
-struct Ship
+class Ship
 {
-	string name;
-	int size;
-	coordinates bow; //If you don't know nautical terms you shouldn't be reading this code.
-	char direction;
+	private:
+		string _name;
+		int _size;
+		coordinates _bow; 
+		char _direction;
+	public:
+		Ship(string name, int size) : _name(name), _size(size) {}
+		string getName() { return _name; }
+		int size() { return _size; }
+		int getRow() { return _bow.row; }
+		int getColumn() { return _bow.column; }
+		char getDirection() { return _direction; }
+		virtual void specialAbility() {}
 };
 
 class BattleFleet
