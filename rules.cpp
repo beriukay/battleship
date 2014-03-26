@@ -8,7 +8,8 @@ bool Rules::thisTurn( bool playersTurn , Board opponentsBoard)
 
 	attackPrompt();
 	playersAttack = playersInput.getUserAttack();
-	hitDetection(playersAttack, opponentsBoard);
+	bool hit = hitDetection(playersAttack, opponentsBoard);
+
 	return !playersTurn;
 }
 
