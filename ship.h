@@ -3,15 +3,30 @@
 
 #include <string>
 using std::string;
-#include "board.h"
+#include <vector>
+using std::vector;
 
-class Ship
+struct coordinates
+{
+	int row;
+	int column;
+};
+
+struct Ship
+{
+	string name;
+	int size;
+	coordinates bow; //If you don't know nautical terms you shouldn't be reading this code.
+	char direction;
+};
+
+class BattleFleet
 {
 private:
-	vector<ship> _ships;
+	vector<Ship> _BattleFleet;
 public:
-	void  placeShips(vector<ship> &);
-	vector<ship> setupShips();
+	void  placeShips(vector<Ship> &);
+	vector<Ship> setupShips();
 	void generateShips();
 };
 
