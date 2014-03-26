@@ -1,14 +1,8 @@
-#include <iostream>
-using std::cout;
-using std::cin;
-using std::endl;
-#include <string>
-using std::string;
 #include "ship.h"
 
-void Ship::generateShips()
+void BattleFleet::generateShips()
 {
-	vector<ship> ships;
+	vector<Ship> ships;
 	string shipName[] = {"Battleship", "Carrier", "Destroyer", "Patrol ship", "Submarine"};
 	int shipSize [] = { 4, 5, 3, 2, 3 };
 	for (int whichShip = 0; whichShip < 5; ++whichShip)
@@ -20,13 +14,13 @@ void Ship::generateShips()
 	}
 }
 
-void Ship::placeShips(vector<ship> & ships)
+void BattleFleet::placeShips(vector<Ship> & ships)
 {
 	ships.resize(3); 
 }
 
-vector<ship> Ship::setupShips()
+vector<ship> BattleFleet::setupShips()
 {
-	vector<ship> userShips;
+	vector<Ship> userShips;
 	return userShips;
 }
