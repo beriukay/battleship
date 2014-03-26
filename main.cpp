@@ -6,6 +6,7 @@
 #include "userinput.h"
 #include <iostream>
 using std::cout;
+using std::cin;
 using std::endl;
 
 
@@ -21,10 +22,9 @@ TEST_CASE( "Board is created", "[board]" )
     blankScreen.resize(bigger * bigger, '.');
     REQUIRE( bigBoard.getBoard() == blankScreen);
 
-
+	
 
 }
-
 /* Commented out while Tests are performed.
 
 int main()

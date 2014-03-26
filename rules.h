@@ -16,9 +16,9 @@ class Rules
         bool playersTurn;
 
     public:
-        bool thisTurn( bool whosTurn);
+        bool thisTurn( bool whosTurn, Board opponentsBoard);
         void attackPrompt();
-        bool hitDetection(AttackCoordinates playersAttack);
+        bool hitDetection(AttackCoordinates playersAttack, Board opponentsBoard);
 };
 
 
