@@ -32,6 +32,8 @@ TEST_CASE( "Making ships", "[ships]")
 	vector<Ship> madeAShip = oneShip.getPlacedShips();
 	cout << "name: " << madeAShip[0].getName() << endl;
 	REQUIRE(madeAShip[0].getName() == "Battleship");
+	REQUIRE(madeAShip[0].size() == 4);
+
 }
 
 /* Commented out while Tests are performed.
