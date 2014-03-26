@@ -41,11 +41,11 @@ void Board::fillUD(Ship theShip, int dir)
 
 void Board::drawBoard()
 {
-	for(int i=0; i < _boardHeight; ++i)
+	for(int rowIterator =0; rowIterator < _boardHeight; ++rowIterator)
 	{
-		for (int j=0; j < _boardWidth; ++j) 
+		for (int columnIterator =0; columnIterator < _boardWidth; ++columnIterator) 
 		{
-			cout << _board[_boardWidth * i + j] << " ";
+			cout << _board[_boardWidth * rowIterator + columnIterator] << " ";
 		}
 		cout << endl;
 	}
