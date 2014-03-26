@@ -3,12 +3,13 @@
 
 #include <string>
 using std::string;
+#include <vector>
+using std::vector;
 #include <iostream>
 using std::cout;
 using std::cin;
 using std::endl;
-#include "board.h"
-#include "rules.h"
+#include "ship.h"
 
 struct AttackCoordinates
 {
@@ -22,6 +23,8 @@ private:
 	bool gameOver;
 public:
 
+	int getUserRow(string shipName);
+	int getUserColumn(string shipName);
 	void getUserPlacement(Ship &);
 	AttackCoordinates getUserAttack();
 	void  placeShips(vector<Ship> &);
