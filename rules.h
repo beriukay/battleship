@@ -19,6 +19,7 @@ class Rules
         bool thisTurn( bool whosTurn, Board opponentsBoard);
         void attackPrompt();
         bool hitDetection(AttackCoordinates playersAttack, Board opponentsBoard);
+		bool endOfGame(Board opponentsBoard);
 };
 
 
