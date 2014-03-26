@@ -26,7 +26,8 @@ void Board::fillLR(Ship theShip, int direction)
 	{
         int calculateRow = theShip.getRow() * _boardWidth;
         int calculateColumn = theShip.getColumn() + (direction * spot);
-		_board[calculateRow + calculateColumn] = theShip.getName()[0];
+		char boardSymbol = theShip.getName()[0];
+		_board[calculateRow + calculateColumn] = boardSymbol;
 	}
 }
 
@@ -35,7 +36,8 @@ void Board::fillUD(Ship theShip, int dir)
 	for (int spot = 0; spot < theShip.size(); ++spot)
 	{
         int calculateRow = (theShip.getRow() + (dir * spot)) * _boardWidth;
-		_board[calculateRow + theShip.getColumn()] = theShip.getName()[0];
+		char boardSymbol = theShip.getName()[0];
+		_board[calculateRow + theShip.getColumn()] = boardSymbol;
 	}
 }
 
