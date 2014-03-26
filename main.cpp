@@ -44,6 +44,20 @@ TEST_CASE( "Making ships", "[ships]")
 	cout << "name: " << madeADestroyer[0].getName() << endl;
 	REQUIRE(madeADestroyer[0].getName() == "Destroyer");
 	REQUIRE(madeADestroyer[0].size() == 3);
+
+	vector<int> justAPTBoat (1,3);
+	BattleFleet onePTBoat(justAPTBoat);
+	vector<Ship> madeAPTBoat = onePTBoat.getFleet();
+	cout << "name: " << madeAPTBoat[0].getName() << endl;
+	REQUIRE(madeAPTBoat[0].getName() == "PTBoat");
+	REQUIRE(madeAPTBoat[0].size() == 2);
+
+	vector<int> justASubmarine (1,4);
+	BattleFleet oneSubmarine(justASubmarine);
+	vector<Ship> madeASubmarine = oneSubmarine.getFleet();
+	cout << "name: " << madeASubmarine[0].getName() << endl;
+	REQUIRE(madeASubmarine[0].getName() == "Submarine");
+	REQUIRE(madeASubmarine[0].size() == 3);
 }
 
 
