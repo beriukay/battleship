@@ -13,10 +13,13 @@ TEST_CASE( "Board is created", "[board]" )
 {
 	//Rules BattleShip;
 	Board playerOneBoard;
-    //playerOneBoard.drawBoard();
     vector<char> blankScreen(100, '.');
     REQUIRE( playerOneBoard.getBoard() == blankScreen);
-	//drawBoard(playerOneBoard);
+
+    int bigger = 100;
+    Board bigBoard(bigger, bigger);
+    blankScreen.resize(bigger * bigger, '.');
+    REQUIRE( bigBoard.getBoard() == blankScreen);
 	//vector<Ship> playerOnePlacedShips = makeShips.setupShips();
 	//playerOneBoard.populateBoard(playerOnePlacedShips);
     //REQUIRE( Factorial(1) == 1 );
