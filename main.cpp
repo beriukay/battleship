@@ -20,7 +20,4 @@ TEST_CASE( "Board is created", "[board]" )
     Board bigBoard(bigger, bigger);
     blankScreen.resize(bigger * bigger, '.');
     REQUIRE( bigBoard.getBoard() == blankScreen);
-	//vector<Ship> playerOnePlacedShips = makeShips.setupShips();
-	//playerOneBoard.populateBoard(playerOnePlacedShips);
-    //REQUIRE( Factorial(1) == 1 );
 }
