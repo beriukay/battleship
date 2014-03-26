@@ -45,3 +45,12 @@ This was a weird issue. After handing off control of the helm to Nate, his git d
 something weird creating a Detached Head. He said he'd write more about it, but it
 was weird. I'm not even sure what went wrong, so I have no idea how to avoid it.
 
+Entry 9
+We've kinda hit a wall. Having started early on with focus on handling user input,
+we are having a tough time running tests. We aren't really sure how to proceed.
+It was also a mistake to start out with board, which we thought initially would
+be really easy to implement. But then it got entangled with user input, and with
+ships. We aren't panicking, because we're agile, but there's not much in the
+way of great ideas at the moment.
+
+Entry 10
