@@ -25,7 +25,8 @@ void Ship::placeShips(vector<ship> & ships)
 	ships.resize(3); 
 }
 
-void Ship::setupShips()
+vector<ship> Ship::setupShips()
 {
-
+	vector<ship> userShips;
+	return userShips;
 }

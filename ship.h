@@ -5,13 +5,13 @@
 using std::string;
 #include "board.h"
 
-class UserInput
+class Ship
 {
 private:
 	vector<ship> _ships;
 public:
 	void  placeShips(vector<ship> &);
-	void setupShips();
+	vector<ship> setupShips();
 	void generateShips();
 };
 

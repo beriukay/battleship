@@ -2,6 +2,7 @@
 #include "catch.hpp"
 #include "board.h"
 #include "userinput.h"
+#include "ship.h"
 #include "rules.h"
 
 void drawBoard(Board b)
@@ -22,9 +23,10 @@ TEST_CASE( "Board is created", "[board]" )
 	Rules BattleShip;
 	Board playerOneBoard;
 	Board playerTwoBoard;
+	Ship makeShips;
 	drawBoard(playerOneBoard);
-	vector<ship> playerOnePlacedShips = setupShips();
-	vector<ship> playerTwoPlacedShips = setupShips();
+	vector<ship> playerOnePlacedShips = makeShips.setupShips();
+	vector<ship> playerTwoPlacedShips = makeShips.setupShips();
 	playerOneBoard.populateBoard(playerOnePlacedShips);
 	drawBoard(playerOneBoard);
 	//playerTwoBoard.populateBoard(playerTwoPlacedShips);
