@@ -1,5 +1,5 @@
 #define CATCH_CONFIG_MAIN // This tells Catch to provide a main()-only do this in one cpp 
-#include "catch.hpp"
+//#include "catch.hpp"
 #include "board.h"
 #include "rules.h"
 #include "ship.h"
@@ -8,7 +8,7 @@
 using std::cout;
 using std::endl;
 
-
+/*
 TEST_CASE( "Board is created", "[board]" ) 
 {
 	//Rules BattleShip;
@@ -58,24 +58,24 @@ TEST_CASE( "Making ships", "[ships]")
 	cout << "name: " << madeASubmarine[0].getName() << endl;
 	REQUIRE(madeASubmarine[0].getName() == "Submarine");
 	REQUIRE(madeASubmarine[0].size() == 3);
-}
 
 
-/* Commented out while Tests are performed.
+
+
+} */
+
+
+
 
 int main()
 {
 	Board playerOneBoard;
 	Board playerTwoBoard;
 	UserInput keyboardInput;
-	playerTwoBoard.drawBoard();
-	vector<Ship> playerOnePlacedShips = keyboardInput.setupShips();
-	vector<Ship> playerTwoPlacedShips = keyboardInput.setupShips();
-	playerOneBoard.populateBoard(playerOnePlacedShips);
-	playerTwoBoard.populateBoard(playerTwoPlacedShips);
-	
+	const vector <int> defaultFleet(5);
+	BattleFleet battleFleet(defaultFleet);
 	system ("wait");
 
 
 }
-*/
+
