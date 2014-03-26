@@ -8,7 +8,7 @@ using std::string;
 #include "board.h"
 #include "rules.h"
 
-void getUserPlacement(ship &myShip)
+void UserInput::getUserPlacement(ship &myShip)
 {
 	char rowName = 'z';
 	while (!(toupper(rowName) >= 'A' && toupper(rowName) <= 'J'))
@@ -29,7 +29,7 @@ void getUserPlacement(ship &myShip)
 		myShip.direction = toupper(direction);
 }
 
-vector<ship> generateShips()
+vector<ship> UserInput::generateShips()
 {
 	vector<ship> ships;
 	string shipName[] = {"Battleship", "Carrier", "Destroyer", "Patrol ship", "Submarine"};
@@ -44,7 +44,7 @@ vector<ship> generateShips()
 	return ships;
 }
 
-void placeShips(vector<ship> & ships)
+void UserInput::placeShips(vector<ship> & ships)
 {
 	for (auto & whichShip : ships)
 	{
@@ -52,38 +52,9 @@ void placeShips(vector<ship> & ships)
 	}
 }
 
-vector<ship> setupShips()
+vector<ship> UserInput::setupShips()
 {
 	vector<ship> createdShips = generateShips();
 	placeShips(createdShips);
 	return createdShips;
 }
-
-void drawBoard(Board b)
-{
-	vector<char> bCopy = b.getBoard();
-	for(int i=0; i < b.getBoardHeight(); ++i)
-	{
-		for (int j=0; j < b.getBoardWidth(); ++j) 
-		{
-			cout << bCopy[b.getBoardWidth() * i + j] << " ";
-		}
-		cout << endl;
-	}
-}
-
-
-int main()
-{
-	Rules BattleShip;
-	Board playerOneBoard;
-	Board playerTwoBoard;
-	drawBoard(playerOneBoard);
-	vector<ship> playerOnePlacedShips = setupShips();
-	vector<ship> playerTwoPlacedShips = setupShips();
-	playerOneBoard.populateBoard(playerOnePlacedShips);
-	playerTwoBoard.populateBoard(playerTwoPlacedShips);
-	
-	system ("wait");
-}
-
