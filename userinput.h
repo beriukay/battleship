@@ -8,6 +8,7 @@ using std::cout;
 using std::cin;
 using std::endl;
 #include "board.h"
+#include "rules.h"
 
 struct AttackCoordinates
 {
