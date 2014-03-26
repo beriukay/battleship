@@ -29,17 +29,21 @@ void UserInput::getUserPlacement(Ship &myShip)
 		myShip.direction = toupper(direction);
 }
 
-void UserInput::getUserAttack()
+AttackCoordinates UserInput::getUserAttack()
 {
+	AttackCoordinates playersAttack;
 	char rowName = 'z';
 	while (!(toupper(rowName) >= 'A' && toupper(rowName) <= 'J'))
 	{
 	cout<< "Please enter the row you would like to attack:"<<endl;
-	cin >> rowName;
-
-	cout<< "Please enter the row you would like to attack:"<<endl;
+	cin >> playersAttack.row;
 	}
 
+	cout<< "Please enter the row you would like to attack:"<<endl;
+	cin >> playersAttack.column;
+
+	return playersAttack;
+	
 }
 
 vector<Ship> UserInput::generateShips()

@@ -9,6 +9,11 @@ using std::cin;
 using std::endl;
 #include "board.h"
 
+struct AttackCoordinates
+{
+	char row;
+	int column;
+};
 
 class UserInput
 {
@@ -17,7 +22,7 @@ private:
 public:
 
 	void getUserPlacement(Ship &);
-	void getUserAttack();
+	AttackCoordinates getUserAttack();
 	void  placeShips(vector<Ship> &);
 	vector<Ship> setupShips();
 	vector<Ship> generateShips();

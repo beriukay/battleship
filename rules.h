@@ -6,6 +6,9 @@
 using std::cout;
 using std::endl;
 
+
+
+
 class Rules
 {
 
