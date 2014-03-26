@@ -1,4 +1,11 @@
 #include <cctype>
+#include <iostream>
+using std::cout;
+using std::cin;
+using std::endl;
+#include <string>
+using std::string;
+#include "board.h"
 #include "rules.h"
 
 void UserInput::getUserPlacement(Ship &myShip)
@@ -22,9 +29,26 @@ void UserInput::getUserPlacement(Ship &myShip)
 		myShip.direction = toupper(direction);
 }
 
-vector<ship> UserInput::generateShips()
+AttackCoordinates UserInput::getUserAttack()
 {
-	vector<Ship> ships;
+	AttackCoordinates playersAttack;
+	char rowName = 'z';
+	while (!(toupper(rowName) >= 'A' && toupper(rowName) <= 'J'))
+	{
+	cout<< "Please enter the row you would like to attack:"<<endl;
+	cin >> playersAttack.row;
+	}
+
+	cout<< "Please enter the row you would like to attack:"<<endl;
+	cin >> playersAttack.column;
+
+	return playersAttack;
+	
+}
+
+vector<Ship> UserInput::generateShips()
+{
+	vector<Ship> fleet;
 	string shipName[] = {"Battleship", "Carrier", "Destroyer", "Patrol ship", "Submarine"};
 	int shipSize [] = { 4, 5, 3, 2, 3 };
 	for (int whichShip = 0; whichShip < 5; ++whichShip)
@@ -32,9 +56,9 @@ vector<ship> UserInput::generateShips()
 		Ship newShip;
 		newShip.name = shipName[whichShip];
 		newShip.size = shipSize[whichShip];
-		ships.push_back(newShip);
+		fleet.push_back(newShip);
 	}
-	return ships;
+	return fleet;
 }
 
 void UserInput::placeShips(vector<Ship> & ships)
@@ -51,3 +75,7 @@ vector<Ship> UserInput::setupShips()
 	placeShips(createdShips);
 	return createdShips;
 }
+
+
+
+

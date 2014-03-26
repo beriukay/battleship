@@ -9,13 +9,20 @@ using std::cin;
 using std::endl;
 #include "board.h"
 
+struct AttackCoordinates
+{
+	char row;
+	int column;
+};
 
 class UserInput
 {
 private:
 	bool gameOver;
 public:
+
 	void getUserPlacement(Ship &);
+	AttackCoordinates getUserAttack();
 	void  placeShips(vector<Ship> &);
 	vector<Ship> setupShips();
 	vector<Ship> generateShips();

@@ -2,7 +2,9 @@
 
 bool Rules::thisTurn( bool playersTurn)
 {
+
 	attackPrompt();
+
 
 	return !playersTurn;
 }

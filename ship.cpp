@@ -7,7 +7,7 @@ void BattleFleet::generateShips()
 	int shipSize [] = { 4, 5, 3, 2, 3 };
 	for (int whichShip = 0; whichShip < 5; ++whichShip)
 	{
-		ship newShip;
+		Ship newShip;
 		newShip.name = shipName[whichShip];
 		newShip.size = shipSize[whichShip];
 		ships.push_back(newShip);
@@ -19,7 +19,7 @@ void BattleFleet::placeShips(vector<Ship> & ships)
 	ships.resize(3); 
 }
 
-vector<ship> BattleFleet::setupShips()
+vector<Ship> BattleFleet::setupShips()
 {
 	vector<Ship> userShips;
 	return userShips;

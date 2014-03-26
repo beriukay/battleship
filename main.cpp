@@ -20,4 +20,26 @@ TEST_CASE( "Board is created", "[board]" )
     Board bigBoard(bigger, bigger);
     blankScreen.resize(bigger * bigger, '.');
     REQUIRE( bigBoard.getBoard() == blankScreen);
+
+
+
 }
+
+/* Commented out while Tests are performed.
+
+int main()
+{
+	Board playerOneBoard;
+	Board playerTwoBoard;
+	UserInput keyboardInput;
+	playerTwoBoard.drawBoard();
+	vector<Ship> playerOnePlacedShips = keyboardInput.setupShips();
+	vector<Ship> playerTwoPlacedShips = keyboardInput.setupShips();
+	playerOneBoard.populateBoard(playerOnePlacedShips);
+	playerTwoBoard.populateBoard(playerTwoPlacedShips);
+	
+	system ("wait");
+
+
+}
+*/
