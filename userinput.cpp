@@ -1,76 +1,47 @@
 #include <cctype>
 #include "userinput.h"
 
-void UserInput::getUserPlacement(Ship &myShip)
+int UserInput::getUserRow(string msg)
 {
 	char rowName = 'z';
-	while (!(toupper(rowName) >= 'A' && toupper(rowName) <= 'J'))
+	while (!rowName >= 'A' && rowName <= 'J')
 	{
-		cout << "Which row would you like the bow of " << myShip.name << "?" << endl;
+		cout << msg << endl;
 		cin >> rowName;
-		myShip.bow.row = (int)toupper(rowName)- 'A';
+		rowName = toupper(rowName);
 	}
+	return (int)rowName - 'A';
+}
 
-	while (!(myShip.bow.column > 0 && myShip.bow.column < 10))
+int UserInput::getUserColumn(string msg)
+{
+	int col;
+	while (!(col >= 0 && col < 10))
 	{
-		cout << "Which column would you like the bow of " << myShip.name << "?" << endl;
-		cin >> myShip.bow.column;
+		cout << msg << endl;
+		cin >> col;
 	}
+	return col;
+}
+
+void UserInput::getUserPlacement(Ship &myShip)
+{
+	int bowRow = getUserRow("Which row would you like the bow of " + myShip.getName() + "?");
+	int bowCol = getUserColumn("Which column would you like the bow?");
+	myShip.setRow(bowRow);
+	myShip.setColumn(bowCol);
+
 		char direction;
 		cout << "Which direction? (eg l, r, u, d)" << endl;
 		cin >> direction;
-		myShip.direction = toupper(direction);
+		myShip.setDirection(toupper(direction));
 }
 
 AttackCoordinates UserInput::getUserAttack()
 {
-	AttackCoordinates playersAttack;
-	char rowCaptilization = 'z';
-	while (!(toupper(rowCaptilization) >= 'A' && toupper(rowCaptilization) <= 'J'))
-	{
-	cout<< "Please enter the row you would like to attack:"<<endl;
-	cin >> rowCaptilization;
-	playersAttack.row = (int)toupper(rowCaptilization) - 'A';
+	AttackCoordinates playerAttack;
+	playerAttack.row = getUserRow("Please enter the row you would like to attack:");
+	playerAttack.column = getUserColumn("Please enter the column you would like to attack:");
 
-	}
-
-	cout<< "Please enter the row you would like to attack:"<<endl;
-	cin >> playersAttack.column;
-
-	return playersAttack;
-	
+	return playerAttack;
 }
-
-vector<Ship> UserInput::generateShips()
-{
-	vector<Ship> fleet;
-	string shipName[] = {"Battleship", "Carrier", "Destroyer", "Patrol ship", "Submarine"};
-	int shipSize [] = { 4, 5, 3, 2, 3 };
-	for (int whichShip = 0; whichShip < 5; ++whichShip)
-	{
-		Ship newShip;
-		newShip.name = shipName[whichShip];
-		newShip.size = shipSize[whichShip];
-		fleet.push_back(newShip);
-	}
-	return fleet;
-}
-
-void UserInput::placeShips(vector<Ship> & ships)
-{
-	for (auto & whichShip : ships)
-	{
-		getUserPlacement(whichShip);
-	}
-}
-
-vector<Ship> UserInput::setupShips()
-{
-	vector<Ship> createdShips = generateShips();
-	placeShips(createdShips);
-	return createdShips;
-}
-
-
-
-
