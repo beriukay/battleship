@@ -15,7 +15,7 @@ class Rules
     public:
         bool thisTurn( bool whosTurn);
         void attackPrompt();
-        void collisionDetection();
+        void hitDetection();
 };
 
 

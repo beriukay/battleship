@@ -2,19 +2,19 @@
 #include "userinput.h"
 #include "rules.h"
 
-bool thisTurn( bool playersTurn)
+bool Rules::thisTurn( bool playersTurn)
 {
-	//attackPrompt();
+	attackPrompt();
 
 	return !playersTurn;
 }
 
-void attackPrompt()
+void Rules::attackPrompt()
 {
 	cout << "Please enter a valid attack location" <<endl;
 }
 
-void collisionDetection()
+void Rules::hitDetection()
 {
 
 }
