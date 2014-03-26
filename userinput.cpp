@@ -4,7 +4,7 @@
 int UserInput::getUserRow(string msg)
 {
 	char rowName = 'z';
-	while (!rowName >= 'A' && rowName <= 'J')
+	while (!(rowName >= 'A' && rowName <= 'J'))
 	{
 		cout << msg << endl;
 		cin >> rowName;
@@ -15,7 +15,7 @@ int UserInput::getUserRow(string msg)
 
 int UserInput::getUserColumn(string msg)
 {
-	int col;
+	int col = -1;
 	while (!(col >= 0 && col < 10))
 	{
 		cout << msg << endl;

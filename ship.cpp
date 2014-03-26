@@ -22,7 +22,7 @@ BattleFleet::BattleFleet(vector<int> shipChoices) : _battleFleet()
 				case SUBMARINE:
 					_battleFleet.push_back(Submarine());
 					break;
-				Default:
+				default:
 					break;
 			}
 		}
