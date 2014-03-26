@@ -20,8 +20,12 @@ void Rules::attackPrompt()
 bool Rules::hitDetection(AttackCoordinates playersAttack , Board opponentsBoard)
 {
 	bool hit;
-
+	int calculateRow = playersAttack.row * opponentsBoard.getBoardWidth();
+    int calculateColumn = playersAttack.column;
+	if ( opponentsBoard._board[calculateRow+calculateColumn] )
 	hit = true;
+	else
+	hit = false;
 
 	return hit;
 }
