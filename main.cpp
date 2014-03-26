@@ -1,9 +1,9 @@
 #define CATCH_CONFIG_MAIN // This tells Catch to provide a main()-only do this in one cpp 
 #include "catch.hpp"
 #include "board.h"
-#include "userinput.h"
-#include "ship.h"
 #include "rules.h"
+#include "ship.h"
+#include "userinput.h"
 
 void drawBoard(Board b)
 {
