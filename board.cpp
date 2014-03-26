@@ -52,3 +52,9 @@ void Board::drawBoard()
 		cout << endl;
 	}
 }
+
+void Board::updateBoard(AttackCoordinates playersAttack, Board opponentsBoard)
+{
+
+
+}

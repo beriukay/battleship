@@ -2,6 +2,7 @@
 #define BOARD_H
 
 #include "ship.h"
+#include "userinput.h"
 #include <vector>
 using std::vector;
 #include <string>
@@ -14,11 +15,12 @@ using std::endl;
 class Board
 {
 private: 
-	vector<char> _board;
 	int _boardWidth;
 	int _boardHeight;
 
 public:
+
+	vector<char> _board;
 
 	Board(int len=10, int width=10);
 	void populateBoard(vector<Ship> & ships);
@@ -27,6 +29,7 @@ public:
 	void fillLR(Ship theShip, int dir);
 	void fillUp(Ship currentShip) { fillUD(currentShip, -1); }
 	void fillDown(Ship currentShip) { fillUD(currentShip, 1); }
+	void updateBoard(AttackCoordinates playersAttack, Board opponentsBoard);
 	void fillUD(Ship theShip, int dir);
     void drawBoard();
 	int getBoardWidth() { return _boardWidth; }
