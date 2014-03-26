@@ -32,11 +32,13 @@ void UserInput::getUserPlacement(Ship &myShip)
 AttackCoordinates UserInput::getUserAttack()
 {
 	AttackCoordinates playersAttack;
-	char rowName = 'z';
-	while (!(toupper(rowName) >= 'A' && toupper(rowName) <= 'J'))
+	char rowCaptilization = 'z';
+	while (!(toupper(rowCaptilization) >= 'A' && toupper(rowCaptilization) <= 'J'))
 	{
 	cout<< "Please enter the row you would like to attack:"<<endl;
-	cin >> playersAttack.row;
+	cin >> rowCaptilization;
+	playersAttack.row = (int)toupper(rowCaptilization) - 'A';
+
 	}
 
 	cout<< "Please enter the row you would like to attack:"<<endl;

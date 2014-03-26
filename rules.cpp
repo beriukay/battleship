@@ -2,9 +2,10 @@
 
 bool Rules::thisTurn( bool playersTurn)
 {
-
+	UserInput playersInput;
+	AttackCoordinates playersAttack;
 	attackPrompt();
-
+	playersAttack = playersInput.getUserAttack();
 
 	return !playersTurn;
 }
