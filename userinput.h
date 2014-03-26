@@ -15,10 +15,10 @@ class UserInput
 private:
 	bool gameOver;
 public:
-	void getUserPlacement(ship &);
-	void  placeShips(vector<ship> &);
-	vector<ship> setupShips();
-	vector<ship> generateShips();
+	void getUserPlacement(Ship &);
+	void  placeShips(vector<Ship> &);
+	vector<Ship> setupShips();
+	vector<Ship> generateShips();
 };
 
 #endif
