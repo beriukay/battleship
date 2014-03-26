@@ -6,7 +6,6 @@
 #include "userinput.h"
 #include <iostream>
 using std::cout;
-using std::cin;
 using std::endl;
 
 
@@ -22,9 +21,19 @@ TEST_CASE( "Board is created", "[board]" )
     blankScreen.resize(bigger * bigger, '.');
     REQUIRE( bigBoard.getBoard() == blankScreen);
 
-	
+
 
 }
+
+TEST_CASE( "Making ships", "[ships]")
+{
+	vector<int> justABattleship (1,0);
+	BattleFleet oneShip(justABattleship);
+	vector<Ship> madeAShip = oneShip.getPlacedShips();
+	cout << "name: " << madeAShip[0].getName() << endl;
+	REQUIRE(madeAShip[0].getName() == "Battleship");
+}
+
 /* Commented out while Tests are performed.
 
 int main()
