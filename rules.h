@@ -6,12 +6,8 @@
 using std::cout;
 using std::endl;
 
-
-
-
 class Rules
 {
-
     private:
         bool playersTurn;
 
