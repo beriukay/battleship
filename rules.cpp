@@ -1,5 +1,3 @@
-#include "board.h"
-#include "userinput.h"
 #include "rules.h"
 
 bool Rules::thisTurn( bool playersTurn)
