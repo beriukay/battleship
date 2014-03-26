@@ -5,7 +5,6 @@
 using std::string;
 #include <vector>
 using std::vector;
-#include <memory>
 
 struct coordinates
 {
@@ -27,6 +26,9 @@ class Ship
 		int getRow() { return _bow.row; }
 		int getColumn() { return _bow.column; }
 		char getDirection() { return _direction; }
+		void setRow(int newRow) { _bow.row = newRow; }
+		void setColumn(int newColumn) { _bow.column = newColumn; }
+		void setDirection(char dir) { _direction = dir; }
 		virtual void specialAbility() {}
 };
 
@@ -47,6 +49,4 @@ public:
 	vector<Ship> getFleet() { return _battleFleet; }
 };
 
-//string shipName[] = {"Battleship", "Carrier", "Destroyer", "Patrol ship", "Submarine"};
-//int shipSize [] = { 4, 5, 3, 2, 3 };
 #endif
