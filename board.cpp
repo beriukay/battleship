@@ -53,8 +53,17 @@ void Board::drawBoard()
 	}
 }
 
-void Board::updateBoard(AttackCoordinates playersAttack, Board opponentsBoard)
+void Board::updateBoard(AttackCoordinates playersAttack, bool hit)
 {
+	int attackLocation;
+	int calculateRow = playersAttack.row * getBoardWidth();
+    int calculateColumn = playersAttack.column;
 
+	attackLocation = calculateColumn = calculateColumn;
+
+	if (hit)
+	_board[attackLocation] = 'X';
+	else
+	_board[attackLocation] = 'O';
 
 }

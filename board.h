@@ -29,7 +29,7 @@ public:
 	void fillLR(Ship theShip, int dir);
 	void fillUp(Ship currentShip) { fillUD(currentShip, -1); }
 	void fillDown(Ship currentShip) { fillUD(currentShip, 1); }
-	void updateBoard(AttackCoordinates playersAttack, Board opponentsBoard);
+	void updateBoard(AttackCoordinates playersAttack, bool hit);
 	void fillUD(Ship theShip, int dir);
     void drawBoard();
 	int getBoardWidth() { return _boardWidth; }
