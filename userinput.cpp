@@ -31,7 +31,14 @@ void UserInput::getUserPlacement(Ship &myShip)
 
 void UserInput::getUserAttack()
 {
+	char rowName = 'z';
+	while (!(toupper(rowName) >= 'A' && toupper(rowName) <= 'J'))
+	{
+	cout<< "Please enter the row you would like to attack:"<<endl;
+	cin >> rowName;
 
+	cout<< "Please enter the row you would like to attack:"<<endl;
+	}
 
 }
 

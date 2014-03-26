@@ -23,7 +23,6 @@ TEST_CASE( "Board is created", "[board]" )
 
 
 
-
 }
 
 /* Commented out while Tests are performed.
