@@ -44,6 +44,12 @@ class Carrier : public Ship
 		Carrier() : Ship("Carrier", 5) {}
 };
 
+class Destroyer : public Ship
+{
+	public:
+		Destroyer() : Ship("Destroyer", 3) {}
+};
+
 class BattleFleet
 {
 private:

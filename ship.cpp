@@ -13,6 +13,12 @@ BattleFleet::BattleFleet(vector<int> shipChoices) : _battleFleet()
 				case BATTLESHIP:
 					_battleFleet.push_back(Battleship());
 					break;
+				case CARRIER:
+					_battleFleet.push_back(Carrier());
+					break;
+				case DESTROYER:
+					_battleFleet.push_back(Destroyer());
+					break;
 				default:
 					break;
 			}
