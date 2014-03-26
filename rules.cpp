@@ -21,9 +21,13 @@ void Rules::attackPrompt()
 bool Rules::hitDetection(AttackCoordinates playersAttack , Board opponentsBoard)
 {
 	bool hit;
+	int attackLocation;
 	int calculateRow = playersAttack.row * opponentsBoard.getBoardWidth();
     int calculateColumn = playersAttack.column;
-	if ( opponentsBoard._board[calculateRow+calculateColumn] )
+	
+	attackLocation = calculateColumn = calculateColumn;
+
+	if ( opponentsBoard._board[attackLocation] != '.' )
 	hit = true;
 	else
 	hit = false;
