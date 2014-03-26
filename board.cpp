@@ -20,12 +20,13 @@ void Board::populateBoard(vector<Ship> &ships)
 	}
 }
 
-void Board::fillLR(Ship theShip, int dir)
+void Board::fillLR(Ship theShip, int direction)
 {
 	for (int spot = 0; spot < theShip.size; ++spot)
 	{
-		_board[theShip.bow.row *_boardWidth + theShip.bow.column + dir * spot] =
-			theShip.name[0];
+        int calculateRow = theShip.bow.row * _boardWidth;
+        int calculateColumn = theShip.bow.column + (direction * spot)
+		_board[calculateRow + calculateColumn] = theShip.name[0];
 	}
 }
 
@@ -33,8 +34,8 @@ void Board::fillUD(Ship theShip, int dir)
 {
 	for (int spot = 0; spot < theShip.size; ++spot)
 	{
-		_board[(theShip.bow.row + (dir * spot)) *_boardWidth + theShip.bow.column] =
-			theShip.name[0];
+        int calculateRow = (theShip.bow.row + (dir * spot)) * _boardWidth;
+		_board[calculateRow + theShip.bow.column] = theShip.name[0];
 	}
 }
 
