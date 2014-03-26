@@ -61,6 +61,7 @@ public:
 	void  placeShips(vector<Ship> &);
 	vector<Ship> setupShips();
 	void generateShips();
+	vector<Ship> getPlacedShips() { return _battleFleet; }
 };
 
 #endif
