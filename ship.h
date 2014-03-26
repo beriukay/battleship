@@ -5,6 +5,7 @@
 using std::string;
 #include <vector>
 using std::vector;
+#include <memory>
 
 struct coordinates
 {
@@ -38,8 +39,25 @@ class Battleship : public Ship
 class BattleFleet
 {
 private:
-	vector<Ship> _BattleFleet;
+	vector<Ship> _battleFleet;
 public:
+	BattleFleet(vector<int> shipChoices) : _battleFleet()
+	{
+		enum ShipValues {BATTLESHIP, CARRIER, DESTROYER, PTBOAT, SUBMARINE};
+		for (int shipChoice : shipChoices)
+		{
+			switch(ShipValues(shipChoice))
+			{
+				case BATTLESHIP:
+					_battleFleet.push_back(Battleship());
+					break;
+				default:
+					break;
+			}
+		}
+
+	}
+
 	void  placeShips(vector<Ship> &);
 	vector<Ship> setupShips();
 	void generateShips();
