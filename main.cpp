@@ -20,21 +20,25 @@ TEST_CASE( "Board is created", "[board]" )
     Board bigBoard(bigger, bigger);
     blankScreen.resize(bigger * bigger, '.');
     REQUIRE( bigBoard.getBoard() == blankScreen);
-
-
-
 }
 
 TEST_CASE( "Making ships", "[ships]")
 {
 	vector<int> justABattleship (1,0);
-	BattleFleet oneShip(justABattleship);
-	vector<Ship> madeAShip = oneShip.getFleet();
-	cout << "name: " << madeAShip[0].getName() << endl;
-	REQUIRE(madeAShip[0].getName() == "Battleship");
-	REQUIRE(madeAShip[0].size() == 4);
+	BattleFleet oneBattleship(justABattleship);
+	vector<Ship> madeABattleship = oneBattleship.getFleet();
+	cout << "name: " << madeABattleship[0].getName() << endl;
+	REQUIRE(madeABattleship[0].getName() == "Battleship");
+	REQUIRE(madeABattleship[0].size() == 4);
 
+	vector<int> justACarrier (1,1);
+	BattleFleet oneCarrier(justACarrier);
+	vector<Ship> madeACarrier = oneCarrier.getFleet();
+	cout << "name: " << madeACarrier[0].getName() << endl;
+	REQUIRE(madeACarrier[0].getName() == "Carrier");
+	REQUIRE(madeACarrier[0].size() == 5);
 }
+
 
 /* Commented out while Tests are performed.
 
