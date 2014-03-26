@@ -24,6 +24,7 @@ void Rules::endTurnPrompt()
 {
 	cout << "Please press enter when you are done looking at the board......."<<endl;
 	cin.get();
+	if (system("CLS")) system("clear");
 }
 
 bool Rules::hitDetection(AttackCoordinates playersAttack , Board opponentsBoard)
