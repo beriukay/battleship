@@ -25,7 +25,7 @@ void Board::fillLR(Ship theShip, int direction)
 	for (int spot = 0; spot < theShip.size; ++spot)
 	{
         int calculateRow = theShip.bow.row * _boardWidth;
-        int calculateColumn = theShip.bow.column + (direction * spot)
+        int calculateColumn = theShip.bow.column + (direction * spot);
 		_board[calculateRow + calculateColumn] = theShip.name[0];
 	}
 }
