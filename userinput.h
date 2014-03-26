@@ -19,17 +19,17 @@ struct AttackCoordinates
 
 class UserInput
 {
-private:
-	bool gameOver;
-public:
+	private:
+		bool gameOver;
+	public:
 
-	int getUserRow(string shipName);
-	int getUserColumn(string shipName);
-	void getUserPlacement(Ship &);
-	AttackCoordinates getUserAttack();
-	void  placeShips(vector<Ship> &);
-	vector<Ship> setupShips();
-	vector<Ship> generateShips();
+		int getUserRow(string shipName);
+		int getUserColumn(string shipName);
+		void getUserPlacement(Ship &);
+		AttackCoordinates getUserAttack();
+		void  placeShips(vector<Ship> &);
+		vector<Ship> setupShips();
+		vector<Ship> generateShips();
 };
 
 #endif
