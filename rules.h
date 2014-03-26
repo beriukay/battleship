@@ -18,7 +18,7 @@ class Rules
     public:
         bool thisTurn( bool whosTurn);
         void attackPrompt();
-        void hitDetection();
+        bool hitDetection(AttackCoordinates playersAttack);
 };
 
 

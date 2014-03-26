@@ -4,6 +4,8 @@ bool Rules::thisTurn( bool playersTurn)
 {
 	UserInput playersInput;
 	AttackCoordinates playersAttack;
+
+
 	attackPrompt();
 	playersAttack = playersInput.getUserAttack();
 
@@ -15,8 +17,9 @@ void Rules::attackPrompt()
 	cout << "Please enter a valid attack location" <<endl;
 }
 
-void Rules::hitDetection()
+bool Rules::hitDetection(AttackCoordinates playersAttack)
 {
 
+	return true;
 }
 
