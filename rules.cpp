@@ -35,3 +35,19 @@ bool Rules::hitDetection(AttackCoordinates playersAttack , Board opponentsBoard)
 	return hit;
 }
 
+bool Rules::endOfGame(Board opponentsBoard)
+{
+	bool isEnd = false;
+	int boardSize;
+
+	boardSize = opponentsBoard.getBoardHeight();
+	boardSize *= opponentsBoard.getBoardWidth();
+
+	for (int boardIterator = 0 ; boardIterator < boardSize ; ++boardIterator)
+	{
+		if (opponentsBoard._board[boardIterator] != '.')
+			return(!isEnd);
+	}
+
+	return (isEnd);
+}
