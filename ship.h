@@ -38,6 +38,12 @@ class Battleship : public Ship
 		Battleship() : Ship("Battleship", 4) {}
 };
 
+class Carrier : public Ship
+{
+	public:
+		Carrier() : Ship("Carrier", 5) {}
+};
+
 class BattleFleet
 {
 private:
