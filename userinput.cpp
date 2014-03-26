@@ -1,7 +1,14 @@
 #include <cctype>
+#include <iostream>
+using std::cout;
+using std::cin;
+using std::endl;
+#include <string>
+using std::string;
+#include "board.h"
 #include "rules.h"
 
-void UserInput::getUserPlacement(Ship &myShip)
+void getUserPlacement(Ship &myShip)
 {
 	char rowName = 'z';
 	while (!(toupper(rowName) >= 'A' && toupper(rowName) <= 'J'))
@@ -22,9 +29,9 @@ void UserInput::getUserPlacement(Ship &myShip)
 		myShip.direction = toupper(direction);
 }
 
-vector<ship> UserInput::generateShips()
+vector<Ship> generateShips()
 {
-	vector<Ship> ships;
+	vector<Ship> fleet;
 	string shipName[] = {"Battleship", "Carrier", "Destroyer", "Patrol ship", "Submarine"};
 	int shipSize [] = { 4, 5, 3, 2, 3 };
 	for (int whichShip = 0; whichShip < 5; ++whichShip)
@@ -32,12 +39,12 @@ vector<ship> UserInput::generateShips()
 		Ship newShip;
 		newShip.name = shipName[whichShip];
 		newShip.size = shipSize[whichShip];
-		ships.push_back(newShip);
+		fleet.push_back(newShip);
 	}
-	return ships;
+	return fleet;
 }
 
-void UserInput::placeShips(vector<Ship> & ships)
+void placeShips(vector<Ship> & ships)
 {
 	for (auto & whichShip : ships)
 	{
@@ -45,9 +52,25 @@ void UserInput::placeShips(vector<Ship> & ships)
 	}
 }
 
-vector<Ship> UserInput::setupShips()
+vector<Ship> setupShips()
 {
 	vector<Ship> createdShips = generateShips();
 	placeShips(createdShips);
 	return createdShips;
 }
+
+void drawBoard(Board b)
+{
+	vector<char> bCopy = b.getBoard();
+	for(int i=0; i < b.getBoardHeight(); ++i)
+	{
+		for (int j=0; j < b.getBoardWidth(); ++j) 
+		{
+			cout << bCopy[b.getBoardWidth() * i + j] << " ";
+		}
+		cout << endl;
+	}
+}
+
+
+
