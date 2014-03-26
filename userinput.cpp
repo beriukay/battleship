@@ -1,14 +1,7 @@
 #include <cctype>
-#include <iostream>
-using std::cout;
-using std::cin;
-using std::endl;
-#include <string>
-using std::string;
-#include "board.h"
 #include "rules.h"
 
-void UserInput::getUserPlacement(ship &myShip)
+void UserInput::getUserPlacement(Ship &myShip)
 {
 	char rowName = 'z';
 	while (!(toupper(rowName) >= 'A' && toupper(rowName) <= 'J'))
@@ -31,12 +24,12 @@ void UserInput::getUserPlacement(ship &myShip)
 
 vector<ship> UserInput::generateShips()
 {
-	vector<ship> ships;
+	vector<Ship> ships;
 	string shipName[] = {"Battleship", "Carrier", "Destroyer", "Patrol ship", "Submarine"};
 	int shipSize [] = { 4, 5, 3, 2, 3 };
 	for (int whichShip = 0; whichShip < 5; ++whichShip)
 	{
-		ship newShip;
+		Ship newShip;
 		newShip.name = shipName[whichShip];
 		newShip.size = shipSize[whichShip];
 		ships.push_back(newShip);
@@ -44,7 +37,7 @@ vector<ship> UserInput::generateShips()
 	return ships;
 }
 
-void UserInput::placeShips(vector<ship> & ships)
+void UserInput::placeShips(vector<Ship> & ships)
 {
 	for (auto & whichShip : ships)
 	{
@@ -52,9 +45,9 @@ void UserInput::placeShips(vector<ship> & ships)
 	}
 }
 
-vector<ship> UserInput::setupShips()
+vector<Ship> UserInput::setupShips()
 {
-	vector<ship> createdShips = generateShips();
+	vector<Ship> createdShips = generateShips();
 	placeShips(createdShips);
 	return createdShips;
 }
