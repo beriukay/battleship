@@ -50,6 +50,19 @@ class Destroyer : public Ship
 		Destroyer() : Ship("Destroyer", 3) {}
 };
 
+class PTBoat : public Ship
+{
+	public:
+		PTBoat() : Ship("PTBoat", 2) {}
+};
+
+class Submarine : public Ship
+{
+	public:
+		Submarine() : Ship("Submarine", 3) {}
+};
+
+
 class BattleFleet
 {
 private:

@@ -1,8 +1,5 @@
 #include "ship.h"
 
-
-//string shipName[] = {"Battleship", "Carrier", "Destroyer", "Patrol ship", "Submarine"};
-//int shipSize [] = { 4, 5, 3, 2, 3 };
 BattleFleet::BattleFleet(vector<int> shipChoices) : _battleFleet()
 	{
 		enum ShipValues {BATTLESHIP, CARRIER, DESTROYER, PTBOAT, SUBMARINE};
@@ -19,7 +16,13 @@ BattleFleet::BattleFleet(vector<int> shipChoices) : _battleFleet()
 				case DESTROYER:
 					_battleFleet.push_back(Destroyer());
 					break;
-				default:
+				case PTBOAT:
+					_battleFleet.push_back(PTBoat());
+					break;
+				case SUBMARINE:
+					_battleFleet.push_back(Submarine());
+					break;
+				Default:
 					break;
 			}
 		}
