@@ -29,6 +29,12 @@ class Ship
 		virtual void specialAbility() {}
 };
 
+class Battleship : public Ship
+{
+	public:
+		Battleship() : Ship("Battleship", 4) {}
+};
+
 class BattleFleet
 {
 private:
