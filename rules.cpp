@@ -9,13 +9,21 @@ bool Rules::thisTurn( bool playersTurn , Board opponentsBoard)
 	attackPrompt();
 	playersAttack = playersInput.getUserAttack();
 	bool hit = hitDetection(playersAttack, opponentsBoard);
-
+	opponentsBoard.updateBoard(playersAttack, hit);
+	opponentsBoard.drawBoard();
+	endTurnPrompt();
 	return !playersTurn;
 }
 
 void Rules::attackPrompt()
 {
 	cout << "Please enter a valid attack location" <<endl;
+}
+
+void Rules::endTurnPrompt()
+{
+	cout << "Please press enter when you are done looking at the board......."<<endl;
+	cin.get();
 }
 
 bool Rules::hitDetection(AttackCoordinates playersAttack , Board opponentsBoard)
