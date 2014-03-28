@@ -28,8 +28,7 @@ class UserInput
 		void getUserPlacement(Ship &);
 		AttackCoordinates getUserAttack();
 		void  placeShips(vector<Ship> &);
-		vector<Ship> setupShips();
-		vector<Ship> generateShips();
+		void setupShips(vector<Ship> &);
 };
 
 #endif

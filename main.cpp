@@ -70,10 +70,45 @@ TEST_CASE( "Making ships", "[ships]")
 int main()
 {
 	Board playerOneBoard;
-	Board playerTwoBoard;
 	UserInput keyboardInput;
-	const vector <int> defaultFleet(5);
-	BattleFleet battleFleet(defaultFleet);
+	const vector <int> defaultFleet { 0, 1, 2, 3, 4};
+	BattleFleet playerOneFleet(defaultFleet);
+        vector<Ship> playerOneShip = playerOneFleet.getFleet();
+        keyboardInput.setupShips(playerOneShip);
+        playerOneBoard.populateBoard(playerOneShip);
+        playerOneBoard.drawBoard();
+        cout << "Input registered, enter to confirm." << endl;
+        cin.ignore();
+        cin.get();
+        if (system("CLS")) system("clear");
+
+        Board playerTwoBoard;
+	BattleFleet playerTwoFleet(defaultFleet);
+        vector<Ship> playerTwoShip = playerTwoFleet.getFleet();
+        keyboardInput.setupShips(playerTwoShip);
+        playerTwoBoard.populateBoard(playerTwoShip);
+        playerTwoBoard.drawBoard();
+        cout << "Input registered, enter to confirm." << endl;
+        cin.ignore();
+        cin.get();
+        if (system("CLS")) system("clear");
+   
+        Rules theGame;
+        bool playerOnesTurn = true;
+        bool theEnd = false;
+        while (!theEnd)
+        {
+            if (playerOnesTurn)
+            {
+                theGame.thisTurn(playerOnesTurn, playerTwoBoard);
+                theGame.endOfGame(playerTwoBoard);
+            }
+            else
+            {
+                theGame.thisTurn(playerOnesTurn, playerOneBoard);
+                theGame.endOfGame(playerOneBoard);
+            }
+        }
 	system ("wait");
 
 

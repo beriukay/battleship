@@ -35,7 +35,6 @@ public:
 	int getBoardWidth() { return _boardWidth; }
 	int getBoardHeight() { return _boardHeight; }
 	vector<char> getBoard() { return _board; }
-
 };
 
 #endif

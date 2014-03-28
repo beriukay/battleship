@@ -42,6 +42,13 @@ AttackCoordinates UserInput::getUserAttack()
 	AttackCoordinates playerAttack;
 	playerAttack.row = getUserRow("Please enter the row you would like to attack:");
 	playerAttack.column = getUserColumn("Please enter the column you would like to attack:");
-
 	return playerAttack;
+}
+
+void UserInput::setupShips(vector<Ship> &theShips)
+{
+    for (auto &ship : theShips)
+    {
+        getUserPlacement(ship);
+    }
 }
